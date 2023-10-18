@@ -9,4 +9,16 @@ Get-CimInstance Win32_OperatingSystem -ComputerName $env:COMPUTERNAME | Select-O
 Get-CimInstance Win32_OperatingSystem -ComputerName $env:COMPUTERNAME | Select-Object PSComputerName, LastBootUpTime, @{n='Uptime';e={(Get-Date)-$_.LastBootUpTime}}
 
 #ex4. Create a new PSDrive called Docs that maps to your Documents folder.
-New-PSDrive -Name Docs
+New-PSDrive -Name Docs -PSProvider FileSystem -Root $env:USERPROFILE\Documents
+## To remove use Remove-PSDrive
+
+##EX5. Take the string powershell and display it in reverse.
+
+$s = 'powershell'
+$arr =$s.ToCharArray() # changes array to string.
+
+
+
+
+
+
